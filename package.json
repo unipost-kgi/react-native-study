@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:clean": "./android/gradlew clean",
+    "gradlew": "./android/gradlew app:assembleDebug && ./android/gradlew installDebug",
     "ios": "react-native run-ios",
+    "ios:clean": "cd ios && rm -rf Pods && pod cache clean --all && arch -x86_64 pod install && cd ..",
+    "pod": "cd ios && arch -x86_64 pod install --repo-update && cd ..",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
